@@ -241,15 +241,15 @@ RectTransform:
   m_GameObject: {fileID: 299788490}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5150001, y: 1, z: 1}
+  m_LocalScale: {x: 1.6665002, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1185761870}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.338, y: 32.894}
-  m_SizeDelta: {x: 597.371, y: 385.355}
+  m_AnchoredPosition: {x: -1, y: 32.894}
+  m_SizeDelta: {x: 562.64, y: 385.355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &299788492
 MonoBehaviour:
@@ -273,7 +273,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2b3a9172249be4145869e2084a477cf3, type: 3}
-    m_FontSize: 42
+    m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 4
@@ -284,7 +284,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.21
-  m_Text: "\t\t\t\t           Tutorial\nUp/Down/Left/Right  --   W A S D\nDodge     
+  m_Text: "\t\t\t\t           Tutorial\nUp/Down/Left/Right  --   W/A/S/D\nDodge     
     --   Space\nShooting  --   Mouse + LMB"
 --- !u!222 &299788493
 CanvasRenderer:
@@ -1015,8 +1015,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -184.98947, y: 195.117}
-  m_SizeDelta: {x: 921.6997, y: 485.403}
+  m_AnchoredPosition: {x: -183.45929, y: 195.117}
+  m_SizeDelta: {x: 958.2449, y: 485.403}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1185761871
 MonoBehaviour:

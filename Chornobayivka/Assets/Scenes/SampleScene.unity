@@ -8683,7 +8683,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  health: 2
+  health: 5
   GameOver: {fileID: 1116939997}
   shake: {fileID: 0}
   dashSpeed: 30
