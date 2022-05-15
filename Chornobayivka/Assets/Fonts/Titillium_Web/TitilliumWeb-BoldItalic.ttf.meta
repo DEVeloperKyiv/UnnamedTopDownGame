@@ -1,0 +1,26 @@
+fileFormatVersion: 2
+guid: 1af87ea4bfd7546b98795f9e6e9522f8
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Titillium Web
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c4dd3ddd527a746338a82e1caf57b768, type: 3}
+  - {fileID: 12800000, guid: d29fe7688fd564b39975548551bc290b, type: 3}
+  - {fileID: 12800000, guid: 608507efb8c124dee92aa4f5aa17daaa, type: 3}
+  - {fileID: 12800000, guid: a1b09b7655c73446cbfad14f62a52b13, type: 3}
+  - {fileID: 12800000, guid: 284d2061efeb2494ba14756531a7018a, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
