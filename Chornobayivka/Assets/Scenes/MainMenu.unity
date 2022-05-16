@@ -2042,7 +2042,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: What A Bad Day To Be An Occupant
+  m_Text: Untitled moskal-shooting game
 --- !u!222 &1804403027
 CanvasRenderer:
   m_ObjectHideFlags: 0

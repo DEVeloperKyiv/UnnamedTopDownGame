@@ -11,6 +11,7 @@ public class BulletScript : MonoBehaviour
     public int damage;
     public LayerMask whatIsSolid;
     private Shake shake;
+    public GameObject Effect;
 
     void Start()
     {
@@ -27,8 +28,14 @@ public class BulletScript : MonoBehaviour
                 shake.CamShake();
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }  
-            Destroy(gameObject);
+            Suicide();
         }
     transform.Translate(Vector2.up * speed * Time.deltaTime);
+    }
+
+    public void Suicide()
+    {
+        Instantiate(Effect,transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 }

@@ -16,6 +16,9 @@ public class Enemy : MonoBehaviour
     // public float startTimeBtwShots;
 
     // public GameObject projectile;
+    public GameObject Effect;
+    public GameObject Bloodsplash; 
+    public GameObject Corpse;
     public Transform player;
     private Transform target;
     private Animator anim;
@@ -59,8 +62,16 @@ public class Enemy : MonoBehaviour
 
         if(health <= 0)
         {
-            Destroy(gameObject);
+            Death();
         }
+    }
+
+    public void Death()
+    {
+        Instantiate(Bloodsplash, transform.position, Quaternion.identity);
+        Instantiate(Corpse, transform.position, Quaternion.identity);
+        Instantiate(Effect, transform.position, Quaternion.identity);
+        Destroy(gameObject);
     }
 
     void Flip()
