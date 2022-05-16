@@ -1,17 +1,22 @@
+using System;
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerMovement : MonoBehaviour
 {
     public float speed;
-    public float health;
+    public float health, maxHealth = 100;
+    public float lerpSpeed;
 
     private Rigidbody2D rb;
     private Vector2 moveVelocity;
     private Animator anim;
     public GameObject GameOver;
     public Shake shake;
+    public Image healthBar;
 
     bool facingRight = true;
 
@@ -37,10 +42,16 @@ public class PlayerMovement : MonoBehaviour
         anim = GetComponent<Animator>();
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         activeMoveSpeed = speed;
+        health = maxHealth;
     }
 
     void Update()
     {
+        HealthBarFiller();
+        ColorChanger();
+
+        lerpSpeed = 3f * Time .deltaTime;
+
         if(isDead == true)
         {
             GameObject.Find("Malyuk").GetComponent<LauncherScript>().enabled = false;
@@ -110,6 +121,17 @@ public class PlayerMovement : MonoBehaviour
         {
             anim.SetTrigger("Death");
         }
+    }
+
+    void HealthBarFiller()
+    {
+        healthBar.fillAmount = Mathf.Lerp(healthBar.fillAmount, health/maxHealth, lerpSpeed);
+    }
+
+    void ColorChanger()
+    {
+        Color healthColor = Color.Lerp(Color.red, Color.green, (health /  maxHealth));
+        healthBar.color = healthColor;
     }
 
     void Flip()

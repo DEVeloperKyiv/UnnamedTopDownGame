@@ -6,9 +6,16 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject Credits;
+    public GameObject Tutorial;
+
     public void StartButton()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+    public void TutorialButton()
+    {
+        Tutorial.SetActive(true);
     }
 
     public void CreditsButton()
