@@ -34,12 +34,15 @@ public class Enemy : MonoBehaviour
         if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+            anim.SetBool("isRunning", true);
         } else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
         {
             transform.position = this.transform.position;
+            anim.SetBool("isRunning", false);
         } else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            anim.SetBool("isRunning", true);
         }
 
         // if(timeBtwShots <= 0)
@@ -51,14 +54,14 @@ public class Enemy : MonoBehaviour
         //     timeBtwShots -= Time.deltaTime;
         // }
 
-        if(transform.position.x == 0)
-        {
-            anim.SetBool("isRunning", false);
-        }
-        else
-        {
-            anim.SetBool("isRunning", true);
-        }
+        // if(transform.position.x == 0)
+        // {
+            
+        // }
+        // else
+        // {
+        //     anim.SetBool("isRunning", true);
+        // }
 
         if(health <= 0)
         {
