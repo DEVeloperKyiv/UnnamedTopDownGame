@@ -10,8 +10,8 @@ public class EnemyWeapon : MonoBehaviour
     public Rigidbody2D rb;
     public GameObject projectile;
     public Transform shotPoint;
-    public Transform player;
-    private Transform target;
+    private GameObject playerGO;
+    private Transform player;
     public GameObject gunSprite;
     public float b_speed = 50f;
     SpriteRenderer _renderer;
@@ -20,6 +20,14 @@ public class EnemyWeapon : MonoBehaviour
 
     void Start()
     {
+
+        //finding gameobject with tag "Player" so that ak would rotate
+        playerGO = GameObject.FindGameObjectWithTag("Player");
+        player = playerGO.transform;
+
+
+
+
         timeBtwShots = startTimeBtwShots;
         rb = this.GetComponent<Rigidbody2D>();
         _renderer = gunSprite.GetComponent<SpriteRenderer>();

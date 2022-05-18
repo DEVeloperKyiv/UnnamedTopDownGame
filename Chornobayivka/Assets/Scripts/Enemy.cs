@@ -19,7 +19,8 @@ public class Enemy : MonoBehaviour
     public GameObject Effect;
     public GameObject Bloodsplash; 
     public GameObject Corpse;
-    public Transform player;
+    private GameObject _playerGO;
+    private Transform player;
     private Transform target;
     private Animator anim;
 
@@ -28,6 +29,8 @@ public class Enemy : MonoBehaviour
         // timeBtwShots = startTimeBtwShots;
         anim = GetComponent<Animator>();
         // player = GameObject.FindGameObjectWithTag("Player");
+        _playerGO = GameObject.FindGameObjectWithTag("Player");
+        player = _playerGO.transform;
     }
 
     private void Update()
