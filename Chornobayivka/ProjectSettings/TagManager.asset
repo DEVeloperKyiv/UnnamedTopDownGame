@@ -7,6 +7,7 @@ TagManager:
   - Enemy
   - DetectionCollider
   - ScreenShake
+  - EnemyBullet
   layers:
   - Default
   - TransparentFX

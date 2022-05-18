@@ -10,6 +10,7 @@ public class EnemyBulletScript : MonoBehaviour
     void Start()
     {
         damageScript = player.GetComponent<PlayerMovement>();
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     void Update()

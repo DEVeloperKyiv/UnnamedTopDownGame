@@ -23,7 +23,7 @@ public class EnemyWeapon : MonoBehaviour
         timeBtwShots = startTimeBtwShots;
         rb = this.GetComponent<Rigidbody2D>();
         _renderer = gunSprite.GetComponent<SpriteRenderer>();
-        
+        projectile = GameObject.FindGameObjectWithTag("EnemyBullet");
     }
 
     private void Update()

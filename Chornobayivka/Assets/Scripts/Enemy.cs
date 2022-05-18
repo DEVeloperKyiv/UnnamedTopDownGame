@@ -27,6 +27,7 @@ public class Enemy : MonoBehaviour
     {
         // timeBtwShots = startTimeBtwShots;
         anim = GetComponent<Animator>();
+        // player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
