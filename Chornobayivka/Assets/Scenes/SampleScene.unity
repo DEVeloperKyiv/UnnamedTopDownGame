@@ -601,6 +601,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &433165184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 433165185}
+  m_Layer: 0
+  m_Name: AttackPose
+  m_TagString: Untagged
+  m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &433165185
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 433165184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.58, y: -0.9, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1084888509}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &439051484
 GameObject:
   m_ObjectHideFlags: 0
@@ -6897,6 +6927,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bf004ffe65b8b74bb3f9da3c25c0940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startTimeBtwAttack: 0.5
+  attackRange: 3
+  damage: 10
+  Effect: {fileID: 2086527381803373980, guid: 523a18a1a5cba41189d2a6c42405be03, type: 3}
+  attackPos: {fileID: 433165185}
+  whatIsEnemy:
+    serializedVersion: 2
+    m_Bits: 64
+--- !u!4 &1084888509 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1797525145222507695, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+  m_PrefabInstance: {fileID: 1797525145130848701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1093746080
 GameObject:
   m_ObjectHideFlags: 0
@@ -7221,8 +7264,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68b17a1cd686bd41a84550f0d10f657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cooldown: 10
-  babyi_narozhayut: {fileID: 6986825905022263446, guid: 031188abe9cf741f99b5454af05584cc, type: 3}
+  cooldown: 15
+  babyi_narozhayut: {fileID: 4525160675928776364, guid: 031188abe9cf741f99b5454af05584cc, type: 3}
 --- !u!4 &1800612614
 Transform:
   m_ObjectHideFlags: 0
@@ -7361,6 +7404,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1797525145222507692, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+      propertyPath: m_TagString
+      value: Weapon
+      objectReference: {fileID: 0}
     - target: {fileID: 1797525147167131209, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
       propertyPath: GameOver
       value: 
@@ -7369,6 +7416,14 @@ PrefabInstance:
       propertyPath: healthBar
       value: 
       objectReference: {fileID: 1034240503}
+    - target: {fileID: 1797525147167131209, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+      propertyPath: maxHealth
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1797525147167131209, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+      propertyPath: Bloodsplash
+      value: 
+      objectReference: {fileID: 2086527381803373980, guid: 523a18a1a5cba41189d2a6c42405be03, type: 3}
     - target: {fileID: 1797525147167131213, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
       propertyPath: m_Name
       value: Player

@@ -12,6 +12,9 @@ public class Enemy : MonoBehaviour
     public float stoppingDistance;
     public float retreatDistance;
 
+    private float dazedTime;
+    public float stratDazedTime;
+
     // private float timeBtwShots;
     // public float startTimeBtwShots;
 
@@ -35,6 +38,14 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if(dazedTime <= 0)
+        {
+            speed = 7;
+        } else 
+        {
+            speed = 0;
+            dazedTime -= Time.deltaTime;
+        }
         if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
@@ -90,6 +101,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        dazedTime = stratDazedTime;
     }
 
 

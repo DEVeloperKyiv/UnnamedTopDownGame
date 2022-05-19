@@ -12,6 +12,7 @@ public class PlayerMovement : MonoBehaviour
     public float lerpSpeed;
 
     private Rigidbody2D rb;
+    public GameObject Bloodsplash; 
     private Vector2 moveVelocity;
     private Animator anim;
     public GameObject GameOver;
@@ -115,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(int damage)
     {
         shake.CamShake();
+        Instantiate(Bloodsplash, transform.position, Quaternion.identity);
         health -= damage;
 
         if(isDead)
