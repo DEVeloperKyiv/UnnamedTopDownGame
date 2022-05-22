@@ -10,12 +10,12 @@ public class BulletScript : MonoBehaviour
     public float distance;
     public int damage;
     public LayerMask whatIsSolid;
-    private Shake shake;
+    // private Shake shake;
     public GameObject Effect;
 
     void Start()
     {
-        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        // shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
     }
 
     private void Update()
@@ -25,7 +25,7 @@ public class BulletScript : MonoBehaviour
         {
             if (hitInfo.collider.CompareTag("Enemy"))
             {
-                shake.CamShake();
+                // shake.CamShake();
                 hitInfo.collider.GetComponent<Enemy>().TakeDamage(damage);
             }  
             Suicide();

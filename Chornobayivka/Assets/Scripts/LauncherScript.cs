@@ -31,6 +31,8 @@ public class LauncherScript : MonoBehaviour
             {
                 Instantiate(bullet, shotPoint.position, shotPoint.rotation);
                 timeBtwShots = startTimeBtwShots;
+
+                CinemachineShake.Instance.ShakeCamera();
             }
         }
         else

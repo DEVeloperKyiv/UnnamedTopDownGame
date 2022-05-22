@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveVelocity;
     private Animator anim;
     public GameObject GameOver;
-    public Shake shake;
+    // public Shake shake;
     public Image healthBar;
 
     bool facingRight = true;
@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
+        // shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         activeMoveSpeed = speed;
         health = maxHealth;
     }
@@ -115,7 +115,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        shake.CamShake();
+        // shake.CamShake();
         Instantiate(Bloodsplash, transform.position, Quaternion.identity);
         health -= damage;
 
