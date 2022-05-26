@@ -1,7 +1,3 @@
-using System;
-using System.Threading;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     public GameObject GameOver;
     public Shake shake;
     public Image healthBar;
+
+    public AudioSource AudSource;
+    public AudioClip hurt;
 
     bool facingRight = true;
 
@@ -118,6 +117,8 @@ public class PlayerMovement : MonoBehaviour
         shake.CamShake();
         Instantiate(Bloodsplash, transform.position, Quaternion.identity);
         health -= damage;
+
+        AudSource.PlayOneShot(hurt);
 
         if(isDead)
         {

@@ -16,7 +16,10 @@ public class EnemyWeapon : MonoBehaviour
     public float b_speed = 50f;
     SpriteRenderer _renderer;
     public bool facing_right;
-    
+
+    public AudioSource AudSource;
+    public AudioClip Gunshot;
+
 
     void Start()
     {
@@ -50,8 +53,9 @@ public class EnemyWeapon : MonoBehaviour
             //launching the bullet
             bullet_rg.AddForce(transform.right * b_speed, ForceMode2D.Impulse);
 
+            AudSource.PlayOneShot(Gunshot);
 
-            timeBtwShots = startTimeBtwShots;
+            timeBtwShots = startTimeBtwShots+Random.Range(-0.1f,0.2f);
         } else
         {
             timeBtwShots -= Time.deltaTime;

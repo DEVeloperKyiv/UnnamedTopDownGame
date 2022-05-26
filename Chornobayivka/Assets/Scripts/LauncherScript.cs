@@ -13,6 +13,9 @@ public class LauncherScript : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
+    public AudioSource _AudioSource;
+    public AudioClip GunShot;
+
     void Update()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -26,6 +29,7 @@ public class LauncherScript : MonoBehaviour
                 Instantiate(bullet, shotPoint.position, shotPoint.rotation);
                 timeBtwShots = startTimeBtwShots;
 
+                _AudioSource.PlayOneShot(GunShot);
                 // CinemachineShake.Instance.ShakeCamera();
             }
         }

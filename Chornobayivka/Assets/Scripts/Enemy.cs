@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
     private Transform player;
     private Transform target;
     private Animator anim;
+    public AudioSource AudSource;
+    public AudioClip hurt;
 
     private void Start()
     {
@@ -104,6 +106,7 @@ public class Enemy : MonoBehaviour
     {
         health -= damage;
         dazedTime = stratDazedTime;
+        AudSource.PlayOneShot(hurt);
     }
 
 
