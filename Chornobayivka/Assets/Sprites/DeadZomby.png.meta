@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: df9a9de60f2e64c8a849c455e738be04
+guid: 1401cc4833db140ab8f720bb92f367dd
 TextureImporter:
   internalIDToNameTable:
   - first:
@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: -5691567538667267026
     second: DeadZomby_4
+  - first:
+      213: -1856713647949312761
+    second: DeadZomby_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -206,6 +209,27 @@ TextureImporter:
       bones: []
       spriteID: e2cd7929a7d7301b0800000000000000
       internalID: -5691567538667267026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DeadZomby_5
+      rect:
+        serializedVersion: 2
+        x: 260
+        y: 70
+        width: 140
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70d8c5446c0ab36e0800000000000000
+      internalID: -1856713647949312761
       vertices: []
       indices: 
       edges: []

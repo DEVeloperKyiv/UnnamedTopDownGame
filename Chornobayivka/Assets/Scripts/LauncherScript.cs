@@ -13,12 +13,6 @@ public class LauncherScript : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -32,7 +26,7 @@ public class LauncherScript : MonoBehaviour
                 Instantiate(bullet, shotPoint.position, shotPoint.rotation);
                 timeBtwShots = startTimeBtwShots;
 
-                CinemachineShake.Instance.ShakeCamera();
+                // CinemachineShake.Instance.ShakeCamera();
             }
         }
         else

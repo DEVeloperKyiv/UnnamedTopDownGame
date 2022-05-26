@@ -20,8 +20,8 @@ public class Enemy : MonoBehaviour
 
     // public GameObject projectile;
     public GameObject Effect;
-    public GameObject Bloodsplash; 
-    public GameObject Corpse;
+    public GameObject[] Bloodsplash; 
+    public GameObject[] Corpses;
     private GameObject _playerGO;
     private Transform player;
     private Transform target;
@@ -86,9 +86,11 @@ public class Enemy : MonoBehaviour
 
     public void Death()
     {
-        Instantiate(Bloodsplash, transform.position, Quaternion.identity);
-        Instantiate(Corpse, transform.position, Quaternion.identity);
         Instantiate(Effect, transform.position, Quaternion.identity);
+        int randomIndex1 = Random.Range(0, Corpses.Length);
+        int randomIndex2 = Random.Range(0, Bloodsplash.Length);
+        Instantiate(Bloodsplash[randomIndex2], transform.position, Quaternion.identity);
+        Instantiate(Corpses[randomIndex1], transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 
