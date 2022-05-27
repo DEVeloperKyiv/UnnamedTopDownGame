@@ -168,6 +168,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &156948903 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1797525146819541295, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+  m_PrefabInstance: {fileID: 1797525145130848701}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &181029328
 GameObject:
   m_ObjectHideFlags: 0
@@ -25939,7 +25944,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.126157, g: 0.21226157, b: 0.3301887, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0.5, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -26172,6 +26177,7 @@ MonoBehaviour:
   - {fileID: 314939093255122673, guid: f45f5abeb2dae410b87398dd881ed725, type: 3}
   AudSource: {fileID: 834782726}
   hurt: {fileID: 8300000, guid: 298f333323ff1724ab8f5a05eef0dd1b, type: 3}
+  cam: {fileID: 0}
 --- !u!212 &834782722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27485,6 +27491,10 @@ PrefabInstance:
       propertyPath: GunShot
       value: 
       objectReference: {fileID: 8300000, guid: 900793b680cceef449cf8b7117222c1a, type: 3}
+    - target: {fileID: 1797525145222507694, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+      propertyPath: spriteGO
+      value: 
+      objectReference: {fileID: 156948903}
     - target: {fileID: 1797525145222507694, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
       propertyPath: _AudioSource
       value: 

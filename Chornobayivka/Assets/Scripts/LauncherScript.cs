@@ -16,9 +16,22 @@ public class LauncherScript : MonoBehaviour
     public AudioSource _AudioSource;
     public AudioClip GunShot;
 
+    public GameObject spriteGO;
+    private SpriteRenderer spriteRender;
+
+    private void Start()
+    {
+        spriteRender = spriteGO.GetComponent<SpriteRenderer>();   
+    }
+
+
+
     void Update()
     {
         Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+
+        Debug.Log(difference);
+
         float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0f, 0f, rotZ + offset);
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -37,19 +50,18 @@ public class LauncherScript : MonoBehaviour
         {
             timeBtwShots -=Time.deltaTime;
         }
-        if(mousePos.x<transform.position.x && facingRight)
+
+
+        if (difference.x < 0)
         {
-            Flip();
+            spriteRender.flipX = true; 
         }
-        else if(mousePos.x>transform.position.x && !facingRight)
+        else
         {
-            Flip();
+            spriteRender.flipX = false;
         }
+
     }
 
-    void Flip()
-    {
-        facingRight = !facingRight; 
-        transform.Rotate(0f, 180f, 0f); 
-    }
+
 }

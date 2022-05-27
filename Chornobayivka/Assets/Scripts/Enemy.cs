@@ -29,6 +29,8 @@ public class Enemy : MonoBehaviour
     public AudioSource AudSource;
     public AudioClip hurt;
 
+    public GameObject cam;
+
     private void Start()
     {
         // timeBtwShots = startTimeBtwShots;
@@ -94,6 +96,7 @@ public class Enemy : MonoBehaviour
         Instantiate(Bloodsplash[randomIndex2], transform.position, Quaternion.identity);
         Instantiate(Corpses[randomIndex1], transform.position, Quaternion.identity);
         Destroy(gameObject);
+
     }
 
     void Flip()
