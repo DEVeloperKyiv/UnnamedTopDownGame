@@ -48,14 +48,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startTimeBtwShots: 1
-  rb: {fileID: 532532777483084775}
   projectile: {fileID: 0}
   shotPoint: {fileID: 4525160675728233756}
   gunSprite: {fileID: 4525160674793342598}
   b_speed: 50
   facing_right: 0
   AudSource: {fileID: 7966942274634665906}
-  Gunshot: {fileID: 8300000, guid: f50e8325f56b3ba4ab8c8156dbd4fb62, type: 3}
+  Gunshot: {fileID: 8300000, guid: 48fbab97a637cfd46980a2099afb74d5, type: 3}
 --- !u!50 &532532777483084775
 Rigidbody2D:
   serializedVersion: 4
@@ -624,6 +623,7 @@ MonoBehaviour:
   - {fileID: 5115499148265332577, guid: 805fd7215e25b488c814fead006f1645, type: 3}
   AudSource: {fileID: 2440339335638511514}
   hurt: {fileID: 8300000, guid: 298f333323ff1724ab8f5a05eef0dd1b, type: 3}
+  cam: {fileID: 0}
 --- !u!61 &4525160675928776366
 BoxCollider2D:
   m_ObjectHideFlags: 0
