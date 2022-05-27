@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private float dashCounter;
     private float dashCoolCounter;
 
+    public Transform center;
+
     public bool isDead
     {
         get
@@ -146,5 +148,12 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
+
+
+        if(transform.position.x<-43 || transform.position.x > 49 || transform.position.y < -22 || transform.position.y > 23)
+        {
+            transform.position = Vector3.Lerp(transform.position, center.position, 1);
+        }
+
     }
 }

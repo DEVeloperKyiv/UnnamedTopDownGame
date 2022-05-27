@@ -7,7 +7,6 @@ public class EnemyWeapon : MonoBehaviour
     private float timeBtwShots;
     public float startTimeBtwShots;
 
-    public Rigidbody2D rb;
     public GameObject projectile;
     public Transform shotPoint;
     private GameObject playerGO;
@@ -32,7 +31,6 @@ public class EnemyWeapon : MonoBehaviour
 
 
         timeBtwShots = startTimeBtwShots;
-        rb = this.GetComponent<Rigidbody2D>();
         _renderer = gunSprite.GetComponent<SpriteRenderer>();
         projectile = GameObject.FindGameObjectWithTag("EnemyBullet");
     }
