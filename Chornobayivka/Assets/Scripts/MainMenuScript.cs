@@ -25,6 +25,6 @@ public class MainMenuScript : MonoBehaviour
 
     public void ExitButton()
     {
-        Debug.Log("Quit");
+        Application.Quit();
     }
 }
