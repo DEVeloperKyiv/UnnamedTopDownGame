@@ -9,6 +9,7 @@ TagManager:
   - ScreenShake
   - EnemyBullet
   - Weapon
+  - HealItem
   layers:
   - Default
   - TransparentFX
