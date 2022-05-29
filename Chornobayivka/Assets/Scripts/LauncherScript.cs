@@ -19,6 +19,8 @@ public class LauncherScript : MonoBehaviour
     public GameObject spriteGO;
     private SpriteRenderer spriteRender;
 
+    public float bulletSpeed;
+
     private void Start()
     {
         spriteRender = spriteGO.GetComponent<SpriteRenderer>();   
@@ -39,7 +41,9 @@ public class LauncherScript : MonoBehaviour
         {
             if (Input.GetMouseButton(0))
             {
-                Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+                var _bullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+                var bulletRG = _bullet.GetComponent<Rigidbody2D>();
+                bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 0f, 0f));
                 timeBtwShots = startTimeBtwShots;
 
                 _AudioSource.PlayOneShot(GunShot);
@@ -49,6 +53,10 @@ public class LauncherScript : MonoBehaviour
         else
         {
             timeBtwShots -=Time.deltaTime;
+        }
+        if (Input.GetMouseButton(1))
+        {
+            ShotgunBlast();
         }
 
 
@@ -61,6 +69,27 @@ public class LauncherScript : MonoBehaviour
             spriteRender.flipX = false;
         }
 
+    }
+    void ShotgunBlast()
+    {
+        for(int i = 0; i <= 2; i++)
+        {
+            var _bullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation);
+            var _bulletRG = _bullet.GetComponent<Rigidbody2D>();
+
+            switch (i)
+            {
+                case 0:
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, -90f, 0f));
+                    break;
+                case 1:
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 0f, 0f));
+                    break;
+                case 3:
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 90f, 0f));
+                    break;
+            }
+        }
     }
 
 

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5659484352889189049}
   - component: {fileID: 5716226469261290218}
   - component: {fileID: 2600133037865704455}
+  - component: {fileID: 3378982874271481313}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Untagged
@@ -95,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 331e4ebdebe39e8468c9cead16c568b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
   lifetime: 0.5
   distance: 0.5
   damage: 5
@@ -103,3 +103,24 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   Effect: {fileID: 2086527381803373980, guid: 523a18a1a5cba41189d2a6c42405be03, type: 3}
+--- !u!50 &3378982874271481313
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1124842336656980104}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0

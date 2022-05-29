@@ -5,7 +5,7 @@ using UnityEngine;
 public class BulletScript : MonoBehaviour
 {
 
-    public float speed;
+
     public float lifetime;
     public float distance;
     public int damage;
@@ -30,7 +30,7 @@ public class BulletScript : MonoBehaviour
             }  
             Suicide();
         }
-    transform.Translate(Vector2.up * speed * Time.deltaTime);
+
     }
 
     public void Suicide()
