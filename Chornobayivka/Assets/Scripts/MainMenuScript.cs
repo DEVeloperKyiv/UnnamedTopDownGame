@@ -8,9 +8,13 @@ public class MainMenuScript : MonoBehaviour
     public GameObject Credits;
     public GameObject Tutorial;
 
+    public Animator scene_transitioner;
+
+    private int LevelToLoad;
+
     public void StartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        FadeToLevel(1);
     }
 
     public void TutorialButton()
@@ -26,5 +30,14 @@ public class MainMenuScript : MonoBehaviour
     public void ExitButton()
     {
         Application.Quit();
+    }
+    public void FadeToLevel(int levelIndex)
+    {
+        LevelToLoad = levelIndex;
+        scene_transitioner.SetTrigger("Fade_Out");
+    }
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(LevelToLoad);
     }
 }

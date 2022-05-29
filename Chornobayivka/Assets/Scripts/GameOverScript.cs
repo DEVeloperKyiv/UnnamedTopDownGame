@@ -7,6 +7,9 @@ public class GameOverScript : MonoBehaviour
 {
     public PlayerMovement pM;
 
+    public Animator transitioner;
+
+    private int LevelToLoad;
     void Update()
     {
         if(pM.isDead == true)
@@ -17,11 +20,21 @@ public class GameOverScript : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("SampleScene");
+        FadeToLevel(1);
+
     }
 
     public void MainMenuButton()
     {
-        SceneManager.LoadScene("MainMenu");
+        FadeToLevel(0);
+    }
+    public void FadeToLevel(int levelIndex)
+    {
+        LevelToLoad = levelIndex;
+        transitioner.SetTrigger("Fade_Out");
+    }
+    public void OnFadeComplete()
+    {
+        SceneManager.LoadScene(LevelToLoad);
     }
 }
