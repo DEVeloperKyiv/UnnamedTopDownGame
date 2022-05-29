@@ -66,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
 
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(moveInput.x == 0)
+            if(moveInput.x == 0 && moveInput.y == 0)
             {
                 anim.SetBool("isRunning", false);
             }
