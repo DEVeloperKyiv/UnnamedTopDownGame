@@ -28,6 +28,9 @@ public class Enemy : MonoBehaviour
     private Animator anim;
     public AudioSource AudSource;
     public AudioClip hurt;
+    public float execDazeTime = 6;
+
+    public bool canBeExecuted;
 
     public GameObject cam;
 
@@ -38,54 +41,25 @@ public class Enemy : MonoBehaviour
         // player = GameObject.FindGameObjectWithTag("Player");
         _playerGO = GameObject.FindGameObjectWithTag("Player");
         player = _playerGO.transform;
+        canBeExecuted = false;
     }
 
     private void Update()
     {
-        if(dazedTime <= 0)
-        {
-            speed = 7;
-        } else 
-        {
-            speed = 0;
-            dazedTime -= Time.deltaTime;
-        }
-        if(Vector2.Distance(transform.position, player.position) > stoppingDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-            anim.SetBool("isRunning", true);
-        } else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-            anim.SetBool("isRunning", false);
-        } else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
-            anim.SetBool("isRunning", true);
-        }
-
-        // if(timeBtwShots <= 0)
-        // {
-        //     Instantiate(projectile, transform.position, Quaternion.identity);
-        //     timeBtwShots = startTimeBtwShots;
-        // } else
-        // {
-        //     timeBtwShots -= Time.deltaTime;
-        // }
-
-        // if(transform.position.x == 0)
-        // {
-            
-        // }
-        // else
-        // {
-        //     anim.SetBool("isRunning", true);
-        // }
-
+        _Move();
         if(health <= 0)
         {
             Death();
         }
+      //  if(health <= 5)
+     //   {
+
+       //     canBeExecuted = true;  
+       // }
+       // if(canBeExecuted=true && Input.GetKeyDown(KeyCode.E) && Vector2.Distance(transform.position, player.position) < 5)
+     //   {
+       //     Death();
+       // }
     }
 
     public void Death()
@@ -98,13 +72,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
 
     }
-
-    void Flip()
-    {
-        facingRight = !facingRight; 
-        transform.Rotate(0f, 180f, 0f); 
-    }
-
+    
     public void TakeDamage(int damage)
     {
         health -= damage;
@@ -112,14 +80,37 @@ public class Enemy : MonoBehaviour
         AudSource.PlayOneShot(hurt);
     }
 
+    public void _Move()
+    {
+        if (canBeExecuted == false)
+        {
+            if (dazedTime <= 0)
+            {
+                speed = 7;
+            }
+            else
+            {
+                speed = 0;
+                dazedTime -= Time.deltaTime;
+            }
+            if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+                anim.SetBool("isRunning", true);
+            }
+            else if (Vector2.Distance(transform.position, player.position) < stoppingDistance && Vector2.Distance(transform.position, player.position) > retreatDistance)
+            {
+                transform.position = this.transform.position;
+                anim.SetBool("isRunning", false);
+            }
+            else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
+            {
+                transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+                anim.SetBool("isRunning", true);
+            }
+        }
+        
+    }
 
-
-    // public int health;
-    // public float speed;
-
-    // private void Update()
-    // {
-    //     transform.Translate(Vector2.left * speed * Time.deltaTime);
-    // }
 
 }

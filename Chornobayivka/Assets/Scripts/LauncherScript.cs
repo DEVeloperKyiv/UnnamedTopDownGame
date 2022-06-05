@@ -8,6 +8,9 @@ public class LauncherScript : MonoBehaviour
     public GameObject bullet;
     public Transform shotPoint;
 
+    public float shotgunBlastCooldown;
+    private float shotgunCountdown;
+
     bool facingRight = true;
 
     private float timeBtwShots;
@@ -54,10 +57,13 @@ public class LauncherScript : MonoBehaviour
         {
             timeBtwShots -=Time.deltaTime;
         }
-        if (Input.GetMouseButton(1))
+        shotgunCountdown -= Time.deltaTime;
+        if(Input.GetMouseButton(1)&& shotgunCountdown <= 0)
         {
             ShotgunBlast();
+            shotgunCountdown = shotgunBlastCooldown;
         }
+
 
 
         if (difference.x < 0)
@@ -72,7 +78,7 @@ public class LauncherScript : MonoBehaviour
     }
     void ShotgunBlast()
     {
-        for(int i = 0; i <= 2; i++)
+        for(int i = 0; i <= 4; i++)
         {
             var _bullet = Instantiate(bullet, shotPoint.position, shotPoint.rotation);
             var _bulletRG = _bullet.GetComponent<Rigidbody2D>();
@@ -80,16 +86,23 @@ public class LauncherScript : MonoBehaviour
             switch (i)
             {
                 case 0:
-                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, -90f, 0f));
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, -360f, 0f));
                     break;
                 case 1:
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, -180f, 0f));                    
+                    break;
+                case 2:
                     _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 0f, 0f));
                     break;
                 case 3:
-                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 90f, 0f));
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 180f, 0f));
+                    break;
+                case 4:
+                    _bulletRG.AddForce(shotPoint.up * bulletSpeed + new Vector3(0f, 360f, 0f));
                     break;
             }
         }
+        timeBtwShots = 1f;
     }
 
 
