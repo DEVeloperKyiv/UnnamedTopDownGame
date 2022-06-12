@@ -53,6 +53,7 @@ public class PlayerMovement : MonoBehaviour
         shake = GameObject.FindGameObjectWithTag("ScreenShake").GetComponent<Shake>();
         activeMoveSpeed = speed;
         health = maxHealth;
+        canMove = true;
     }
 
     public void dmgPermit(int variable)
