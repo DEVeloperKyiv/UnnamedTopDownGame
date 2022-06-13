@@ -620,6 +620,8 @@ MonoBehaviour:
   - {fileID: 5115499148265332577, guid: 805fd7215e25b488c814fead006f1645, type: 3}
   AudSource: {fileID: 2440339335638511514}
   hurt: {fileID: 8300000, guid: 298f333323ff1724ab8f5a05eef0dd1b, type: 3}
+  execDazeTime: 6
+  canBeExecuted: 0
   cam: {fileID: 0}
 --- !u!61 &4525160675928776366
 BoxCollider2D:

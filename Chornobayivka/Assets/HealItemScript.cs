@@ -18,6 +18,7 @@ public class HealItemScript : MonoBehaviour
         
         if(collision.gameObject.tag == "Player")
         {
+            Debug.Log("hit");
 
             PlayerMovement pScript = collision.gameObject.GetComponent<PlayerMovement>();
             if (pScript.maxHealth - pScript.health < healAMT)

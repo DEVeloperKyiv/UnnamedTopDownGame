@@ -16,6 +16,10 @@ public class Tutorial_Script : MonoBehaviour
     public GameObject dummy;
     public GameObject heal;
     bool wasSpawned;
+    GameObject currentEnemy;
+    GameObject player;
+    PlayerMovement pmov;
+    bool canSpawn;
     public string[] T_Text =
         {
         "Hello!", //0
@@ -37,14 +41,20 @@ public class Tutorial_Script : MonoBehaviour
     {
         currentDialogue = 0;
         wasSpawned = false;
+        player = GameObject.FindGameObjectWithTag("Player");
+        pmov = player.GetComponent<PlayerMovement>();
     }
     public void nextDialogue()
     {
         currentDialogue += 1;
+        canSpawn = true;
+        if(currentDialogue == 10)
+        {
+            pmov.TakeDamage(10);
+        }
     }
     private void Update()
     {
-        Debug.Log(enemies);
         TextPrompt.text = T_Text[currentDialogue];
         if (currentDialogue == 3 && hasMoved == false)
         {
@@ -58,51 +68,48 @@ public class Tutorial_Script : MonoBehaviour
         if (currentDialogue == 5)
         {
             continueButton.SetActive(false);
-            if (wasSpawned == false)
+            if (canSpawn)
             {
                 GameObject _dummy = Instantiate(dummy, new Vector3(0, 0, 0), Quaternion.identity);
-                enemies.Add(_dummy);
-                wasSpawned = true;
+                currentEnemy = _dummy;
+                canSpawn = false;
             }
 
             
-            if (enemies.Count==0)
+            if (currentEnemy==null)
             {
-                Debug.Log("bruh");
                 continueButton.SetActive(true);
-                wasSpawned = false;
             }
         }
         if(currentDialogue == 7)
         {
             continueButton.SetActive(false);
-            if(wasSpawned == false)
+            if(canSpawn)
             {
                 GameObject _dummy = Instantiate(dummy, new Vector3(0, 0, 0), Quaternion.identity);
-                enemies.Add(_dummy);
-                wasSpawned = true;
+                currentEnemy = _dummy;
+                canSpawn = false;
             }
 
-            if (enemies.Count==0)
+            if (currentEnemy==null)
             {
                 continueButton.SetActive(true);
-                wasSpawned = false;
+
             }
         }
         if(currentDialogue == 10)
         {
             continueButton.SetActive(false);
-            if (wasSpawned == false)
+            if (canSpawn)
             {
                 GameObject _heal = Instantiate(heal, new Vector3(0, 0, 0), Quaternion.identity);
-                enemies.Add(_heal);
-                wasSpawned = true;
+                currentEnemy = _heal;
+                canSpawn = false;
             }
 
-            if (enemies.Count==0)
+            if (currentEnemy == null)
             {
                 continueButton.SetActive(true);
-                wasSpawned = false;
             }
         }
         
