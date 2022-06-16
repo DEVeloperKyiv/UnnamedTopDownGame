@@ -174,11 +174,6 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(rb.position + moveVelocity * Time.fixedDeltaTime);
 
 
-        if(transform.position.x<-43 || transform.position.x > 49 || transform.position.y < -22 || transform.position.y > 23)
-        {
-            transform.position = Vector3.Lerp(transform.position, center.position, 1);
-        }
-
     }
    // void GloryKill()
     //{

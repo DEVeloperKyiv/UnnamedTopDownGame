@@ -11,7 +11,6 @@ public class LauncherScript : MonoBehaviour
     public float shotgunBlastCooldown;
     private float shotgunCountdown;
 
-    bool facingRight = true;
 
     private float timeBtwShots;
     public float startTimeBtwShots;

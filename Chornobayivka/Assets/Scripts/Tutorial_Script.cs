@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 
@@ -15,11 +16,11 @@ public class Tutorial_Script : MonoBehaviour
     public List<GameObject> enemies;
     public GameObject dummy;
     public GameObject heal;
-    bool wasSpawned;
     GameObject currentEnemy;
     GameObject player;
     PlayerMovement pmov;
     bool canSpawn;
+    public GameOverScript goScript;
     public string[] T_Text =
         {
         "Hello!", //0
@@ -34,15 +35,16 @@ public class Tutorial_Script : MonoBehaviour
         "Every 20 seconds first aid kit will appear somewhere. Make sure to pick it up",//9
         "I will put one here for tutorials sake. Pick it up",//10
         "You picked it up!",//11
-        "Congratulations! Now you are certified to shoot ruzzians! I will send you back to menu now"//12
+        "Congratulations! Now you are certified to shoot ruzzians! Press 'Next' to go to menu",//12
+        ""//13
         };
 
     private void Start()
     {
         currentDialogue = 0;
-        wasSpawned = false;
         player = GameObject.FindGameObjectWithTag("Player");
         pmov = player.GetComponent<PlayerMovement>();
+        
     }
     public void nextDialogue()
     {
@@ -111,6 +113,10 @@ public class Tutorial_Script : MonoBehaviour
             {
                 continueButton.SetActive(true);
             }
+        }
+        if(currentDialogue == 13)
+        {
+            goScript.FadeToLevel(0);
         }
         
 

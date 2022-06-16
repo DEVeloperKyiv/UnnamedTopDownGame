@@ -1,5 +1,6 @@
 using UnityEngine;
 
+
 public class HealItemScript : MonoBehaviour
 {
     public int healAMT;
@@ -15,10 +16,11 @@ public class HealItemScript : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+
         
         if(collision.gameObject.tag == "Player")
         {
-            Debug.Log("hit");
+
 
             PlayerMovement pScript = collision.gameObject.GetComponent<PlayerMovement>();
             if (pScript.maxHealth - pScript.health < healAMT)

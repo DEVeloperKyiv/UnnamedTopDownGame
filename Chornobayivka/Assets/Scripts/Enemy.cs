@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public float health;
     public float speed;
 
-    bool facingRight = true;
 
     public float stoppingDistance;
     public float retreatDistance;

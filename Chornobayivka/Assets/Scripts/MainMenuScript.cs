@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuScript : MonoBehaviour
 {
     public GameObject Credits;
-    public GameObject Tutorial;
+
 
     public Animator scene_transitioner;
 
@@ -17,10 +17,7 @@ public class MainMenuScript : MonoBehaviour
         FadeToLevel(1);
     }
 
-    public void TutorialButton()
-    {
-        Tutorial.SetActive(true);
-    }
+
 
     public void CreditsButton()
     {
