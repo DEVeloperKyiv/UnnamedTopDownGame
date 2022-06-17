@@ -735,7 +735,7 @@ GameObject:
   - component: {fileID: 506538894}
   - component: {fileID: 506538893}
   m_Layer: 5
-  m_Name: timer
+  m_Name: Points
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26458,8 +26458,8 @@ GameObject:
   - component: {fileID: 1072681628}
   - component: {fileID: 1072681627}
   m_Layer: 0
-  m_Name: timer
-  m_TagString: Untagged
+  m_Name: PointManager
+  m_TagString: PointManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26476,7 +26476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f397e2433df1e42957f767570a227a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timer: {fileID: 506538893}
+  pointText: {fileID: 506538893}
+  points: 0
 --- !u!4 &1072681628
 Transform:
   m_ObjectHideFlags: 0
@@ -26838,6 +26839,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a71e6e89b85b24ff3a41e276482e0256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1400311874 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6345448097522019872, guid: ff2e0654067faa441a5a52fa22091104, type: 3}
+  m_PrefabInstance: {fileID: 403587346}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &1400311880
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1400311874}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1408337618
 GameObject:
   m_ObjectHideFlags: 0
@@ -27129,6 +27156,14 @@ PrefabInstance:
     - target: {fileID: 3079818596987866930, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079818596987866931, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3079818596987866931, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
+      propertyPath: m_GravityScale
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3079818596987866934, guid: b5e2e18a635fa464a9c802347fc8ccf6, type: 3}
       propertyPath: shake
