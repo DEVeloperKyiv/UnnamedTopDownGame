@@ -23,19 +23,19 @@ public class Tutorial_Script : MonoBehaviour
     public GameOverScript goScript;
     public string[] T_Text =
         {
-        "Hello!", //0
-        "Here im gonna teach you how to play this game",//1
+        "Good morning, soldier", //0
+        "Let's teach you basics of shooting ruzzians",//1
         "So first lets try moving",//2
         "Move by pressing WASD",//3
         "Great job!",//4
-        "Now lets try shooting. To shoot press MB1. Im gonna put this idiot here, kill him",//5
+        "Now lets try shooting. To shoot press LMB. I'm gonna put this idiot here, kill him",//5
         "Nice",//6
-        "You can also shoot 5 bullets at once in a shotgun pattern. Press MB2 to do so",//7
+        "You can also shoot 5 bullets at once in a shotgun pattern. Press RMB to do so",//7
         "Pog",//8
         "Every 20 seconds first aid kit will appear somewhere. Make sure to pick it up",//9
         "I will put one here for tutorials sake. Pick it up",//10
         "You picked it up!",//11
-        "Congratulations! Now you are certified to shoot ruzzians! Press 'Next' to go to menu",//12
+        "Congratulations! Now you are certified to shoot ruzzians! Press 'Next' to go to back to main menu. Slava Ukraini!",//12
         ""//13
         };
 

@@ -463,10 +463,10 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 2b3a9172249be4145869e2084a477cf3, type: 3}
-    m_FontSize: 40
+    m_FontSize: 33
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 4
+    m_MinSize: 3
     m_MaxSize: 54
     m_Alignment: 0
     m_AlignByGeometry: 0
@@ -474,7 +474,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.21
-  m_Text: "\t\t\t\t  Change log:\n1...\n2...\n3..."
+  m_Text: "\t\t\t\t  Change log:\n02.07.2022\n- Added tutorial level\n- New shotgun-type
+    attack\n- New score system\n- Minor bug fixes"
 --- !u!222 &299788493
 CanvasRenderer:
   m_ObjectHideFlags: 0
