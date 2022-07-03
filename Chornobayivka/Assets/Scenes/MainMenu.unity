@@ -474,7 +474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.21
-  m_Text: "\t\t\t\t  Change log:\n02.07.2022\n- Added tutorial level\n- New shotgun-type
+  m_Text: "\t\t\t\t  Change log:\n03.07.2022\n- Added tutorial level\n- New shotgun-type
     attack\n- New score system\n- Minor bug fixes"
 --- !u!222 &299788493
 CanvasRenderer:

@@ -27071,23 +27071,6 @@ MonoBehaviour:
   dummy: {fileID: 8713587194617426125, guid: e42e2d180df2e804f84ecd06d2395f02, type: 3}
   heal: {fileID: 3051744599340660948, guid: 22384275afc1e4e478f12e42526ec3d7, type: 3}
   goScript: {fileID: 1679834450}
-  T_Text:
-  - Hello!
-  - Here im gonna teach you how to play this game
-  - So first lets try moving
-  - Move by pressing WASD
-  - Great job!
-  - Now lets try shooting. To shoot press MB1. Im gonna put this idiot here, kill
-    him
-  - Nice
-  - You can also shoot 5 bullets at once in a shotgun pattern. Press MB2 to do so
-  - Pog
-  - Every 20 seconds first aid kit will appear somewhere. Make sure to pick it up
-  - I will put one here for tutorials sake. Pick it up
-  - You picked it up!
-  - Congratulations! Now you are certified to shoot ruzzians! I will send you back
-    to menu now
-  - '  '
 --- !u!4 &1944867235
 Transform:
   m_ObjectHideFlags: 0

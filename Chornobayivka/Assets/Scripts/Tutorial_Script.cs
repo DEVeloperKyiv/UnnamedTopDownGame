@@ -21,7 +21,7 @@ public class Tutorial_Script : MonoBehaviour
     PlayerMovement pmov;
     bool canSpawn;
     public GameOverScript goScript;
-    public string[] T_Text =
+    private string[] T_Text =
         {
         "Good morning, soldier", //0
         "Let's teach you basics of shooting ruzzians",//1
