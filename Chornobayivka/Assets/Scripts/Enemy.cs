@@ -7,6 +7,8 @@ public class Enemy : MonoBehaviour
     public float health;
     public float speed;
 
+    public bool tutorialDummy;
+
     Points pointManager;
 
     public float stoppingDistance;
@@ -42,7 +44,11 @@ public class Enemy : MonoBehaviour
         _playerGO = GameObject.FindGameObjectWithTag("Player");
         player = _playerGO.transform;
         canBeExecuted = false;
-        pointManager = GameObject.FindGameObjectWithTag("PointManager").GetComponent<Points>();
+        if (tutorialDummy == false)
+        {
+            pointManager = GameObject.FindGameObjectWithTag("PointManager").GetComponent<Points>();
+        }
+        
     }
 
     private void Update()
@@ -71,7 +77,11 @@ public class Enemy : MonoBehaviour
         Instantiate(Bloodsplash[randomIndex2], transform.position, Quaternion.identity);
         Instantiate(Corpses[randomIndex1], transform.position, Quaternion.identity);
         Destroy(gameObject);
-        pointManager.points += 5;
+        if(tutorialDummy== false)
+        {
+            pointManager.points += 5;
+        }
+        
     }
     
     public void TakeDamage(int damage)

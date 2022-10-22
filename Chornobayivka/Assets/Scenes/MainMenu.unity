@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d7eeb0e2f5784e68bf74b009dfdbb77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Credits: {fileID: 0}
+  Credits: {fileID: 166572520}
   scene_transitioner: {fileID: 13220533}
 --- !u!1 &166572520
 GameObject:
